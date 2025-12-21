@@ -25,40 +25,15 @@ using namespace std;
 #define printpv(vec) for(auto p:vec){cout << '{' << p.first << ',' << p.second << '}' << " ";}cout<<endl;
 const int mod=1e9+7;
 
-int minimumVals(vector<int> row){
-    stack<int> st;  
-    int width = 0;
-    int ans = row[0];
-    for(int i=0;i<row.size();i++){
-        if(st.empty() && row[i] != 0){
-            st.push(row[i]);
-            width = 1;
-        }else{
-            if(row[i] == 0){
-                while(!st.empty()) st.pop();
-                width = 0;
-            }else if(row[i] > st.top()){
-                width ++;       
-            }else{
-                st.push(row[i]);
-                width++;
-            }
-        }
+class Solution {
+    public:
+    void solve(){
 
-        if(!st.empty()){
-            ans = max(ans, st.top() * width);
-        }
     }
-
-    return ans;
-}
+};
 
 int main(){
-    system("clear");
-    vector<int> arr1 = {0, 2 ,2  , 2 , 6 ,7, 5, 0};
-
-    int ans = minimumVals(arr1);
-    cout << ans << endl;
-
+    Solution sol;
     
 }
+
