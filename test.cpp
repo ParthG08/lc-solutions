@@ -3,10 +3,17 @@ using namespace std;
 
 
 int main() {
-    string decimal_part = "";
-    int decimal_val = 99;
-    decimal_part += ('0' + decimal_val);
+    map<int,int> mp;
+    mp[0] = 1;
+    mp[1]++;
+    mp[1]++;
+    mp[1]--;
+    mp[1]--;
 
-    cout << decimal_part << endl;
+    mp.erase(1);
+
+    for(auto [key,val]: mp){
+        cout << key << " " << val << endl;
+    }
     return 0;
 }
