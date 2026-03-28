@@ -2,18 +2,27 @@
 using namespace std;
 
 
+#include <bits/stdc++.h>
+using namespace std;
+
 int main() {
-    map<int,int> mp;
-    mp[0] = 1;
-    mp[1]++;
-    mp[1]++;
-    mp[1]--;
-    mp[1]--;
+    string str = "bbbbb";
 
-    mp.erase(1);
+    int n = str.size();
+    unordered_set<char> st;
 
-    for(auto [key,val]: mp){
-        cout << key << " " << val << endl;
+    int len = 0;
+    int l = 0;
+
+    for (int r = 0; r < n; r++) {
+        while (st.find(str[r]) != st.end()) {
+            st.erase(str[l]);
+            l++;
+        }
+
+        st.insert(str[r]);
+        len = max(len, r - l + 1);
     }
-    return 0;
+
+    cout << len << endl;
 }
